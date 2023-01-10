@@ -5,7 +5,7 @@ html {
     width: 100vw;
 }
 
-.wrap{
+.wrap {
     margin: 0;
     padding: 0;
     width: 90vw;
@@ -15,39 +15,43 @@ html {
     justify-content: space-evenly;
 }
 
-.opponent, .player{
+.opponent,
+.player {
     height: 50%;
     width: 98vw;
 }
 
-.opponent{
+.opponent {
     display: flex;
     justify-content: space-between;
 }
-.player{
+
+.player {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
 
-
-.gray, .ash, .healthBarOpponent, .healthBarPlayer {
+.gray,
+.ash,
+.healthBarOpponent,
+.healthBarPlayer {
     width: 50%;
 }
 
-.healthBarOpponent, .healthBarPlayer {
+.healthBarOpponent,
+.healthBarPlayer {
     height: 400px;
-
 }
 
-.healthBarPlayer{
+.healthBarPlayer {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
 }
 
-.green{
+.green {
     background-color: green;
     height: 20px;
     width: 600px;
@@ -55,7 +59,7 @@ html {
     border-radius: 25px;
 }
 
-.healthBarPlayer button{
+.healthBarPlayer button {
     margin-top: 10px;
     height: 200px;
     width: 600px;
@@ -69,3 +73,6 @@ img {
     height: 400px;
     width: 400px;
 }
+
+@use "setup";
+@use "starter";
