@@ -1,0 +1,96 @@
+html {
+  background-color: yellow;
+  font-family: "Press Start 2P", cursive;
+  height: 100vh;
+  width: 100vw;
+}
+
+.wrap {
+  margin: 0;
+  padding: 0;
+  width: 90vw;
+  height: 98vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.opponent, .player {
+  height: 50%;
+  width: 98vw;
+}
+
+.opponent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.gray, .ash, .healthBarOpponent, .healthBarPlayer {
+  width: 50%;
+}
+
+.healthBarOpponent, .healthBarPlayer {
+  height: 400px;
+}
+
+.healthBarPlayer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.green {
+  background-color: green;
+  height: 20px;
+  width: 600px;
+  border: solid black 3px;
+  border-radius: 25px;
+}
+
+.healthBarPlayer button {
+  margin-top: 10px;
+  height: 200px;
+  width: 600px;
+  font-size: 20px;
+  border: solid black 3px;
+  background-color: rgb(226, 223, 223);
+  font-family: "Press Start 2P", cursive;
+}
+
+img {
+  height: 400px;
+  width: 400px;
+}
