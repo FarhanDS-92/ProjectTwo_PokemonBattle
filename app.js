@@ -28,8 +28,7 @@ Promise.all(myResult)
 //     provide randomized pokemon, 1 from each type, to the function in the form of an array
 
 pokemon.enemyPoke = function(pokedata){
-    const pokemonType = getRandomInt(3);
-    const chosenObj = pokedata[pokemonType];
+    const chosenObj = pokedata[getRandomInt(3)];
     const randomChoice = getRandomInt(chosenObj.pokemon.length);
     const finalPoke = chosenObj.pokemon[randomChoice];
     console.log(finalPoke);
