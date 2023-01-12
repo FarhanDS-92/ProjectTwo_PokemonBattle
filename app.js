@@ -9,12 +9,14 @@ pokemon.urlPokeSprite = ['https://pokeapi.co/api/v2/pokemon/'];
 
 
 // fetch url
-const myResult = pokemon.urls.map( (url) => {
+const myResult = pokemon.urls.map((url) => {
     return fetch(url)
         .then((response) => {
             return response.json();
         })
         .then((data) => {
+            console.log(data);
+            console.log(data.pokemon);
             return data;
         })
 });
@@ -22,17 +24,21 @@ const myResult = pokemon.urls.map( (url) => {
 Promise.all(myResult)
     .then(pokedata => {
         console.log(pokedata);
+        const fullArray = [];
+        fullArray.push(...pokedata[0].pokemon, ...pokedata[1].pokemon, ...pokedata[2].pokemon);
+        console.log(fullArray);
         pokemon.enemyPoke(pokedata);
-    })
+    });
 
 //     provide randomized pokemon, 1 from each type, to the function in the form of an array
 
-pokemon.enemyPoke = function(pokedata){
+pokemon.enemyPoke = function(pokedata) {
     const chosenObj = pokedata[getRandomInt(3)];
     const randomChoice = getRandomInt(chosenObj.pokemon.length);
     const finalPoke = chosenObj.pokemon[randomChoice];
     console.log(finalPoke);
 }
+
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -67,8 +73,3 @@ function getRandomInt(max) {
 
 // create a paragraph tag that states the winner in the header of the page
 //     (stretch goal: create a simple animation that shows the winner moving)
-
-
-
-
-
