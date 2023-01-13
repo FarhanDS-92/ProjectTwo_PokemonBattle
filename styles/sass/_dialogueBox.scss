@@ -54,6 +54,40 @@
     }
 }
 
+.testWrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box3 {
+    height: 90%;
+    width: 90%;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1.0;
+    margin: 0;
+    h2 {
+        text-transform: uppercase;
+    }
+    p {
+        font-size: 16px;
+        line-height: 200%;
+    }
+    a {
+        margin: 5%;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: black;
+    }
+}
+
 // .box>i {
 //     width: 0;
 //     height: 0;
