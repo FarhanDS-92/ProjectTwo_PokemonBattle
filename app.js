@@ -1,12 +1,10 @@
 // create namespaced object that contains pokemon team of 3 pokemon(call that two times.once for player, once for opponent)
 const pokemon = {};
 
-
 //     define endpoint
 //     filter array down to 3 types(water, fire, grass)
 pokemon.urls = ['https://pokeapi.co/api/v2/type/10/', 'https://pokeapi.co/api/v2/type/11/', 'https://pokeapi.co/api/v2/type/12/'];
 pokemon.urlPokeSprite = ['https://pokeapi.co/api/v2/pokemon/'];
-
 
 // fetch url
 const myResult = pokemon.urls.map((url) => {
@@ -15,37 +13,49 @@ const myResult = pokemon.urls.map((url) => {
             return response.json();
         })
         .then((data) => {
-            console.log(data);
-            console.log(data.pokemon);
+            // console.log(data);
+            // console.log(data.pokemon);
             return data;
         })
 });
 
+//     provide randomized pokemon, 1 from each type, to the function in the form of an array
+// Function to give 3 random pokemons from each of the three types
+pokemon.teamCreator = function(pokedata) {
+    console.log(pokedata);
+    pokedata.map(data => {
+        // console.log(data.pokemon);
+        const randomPokemon = data.pokemon[getRandomInt(data.pokemon.length)];
+        // return randomPokemon;
+        console.log(randomPokemon);
+    });
+}
+
 Promise.all(myResult)
     .then(pokedata => {
         console.log(pokedata);
-        const fullArray = [];
-        fullArray.push(...pokedata[0].pokemon, ...pokedata[1].pokemon, ...pokedata[2].pokemon);
-        console.log(fullArray);
+        pokemon.teamCreator(pokedata);
+
+        // CURRENTLY NOT BEING USED - create a full array with all 3 pokemon types
+        // const fullArray = [];
+        // fullArray.push(...pokedata[0].pokemon, ...pokedata[1].pokemon, ...pokedata[2].pokemon);
+        // console.log(fullArray);
+
+        // select enemy pokemon
         pokemon.enemyPoke(pokedata);
     });
-
-//     provide randomized pokemon, 1 from each type, to the function in the form of an array
 
 pokemon.enemyPoke = function(pokedata) {
     const chosenObj = pokedata[getRandomInt(3)];
     const randomChoice = getRandomInt(chosenObj.pokemon.length);
     const finalPoke = chosenObj.pokemon[randomChoice];
-    console.log(finalPoke);
+    // const finalPokeImage = finalPoke
+    // console.log(finalPoke);
 }
-
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
-
-
-
 
 // if you need to access multiple promises (no need if you only have one):
 
@@ -82,7 +92,6 @@ const ruleDisplayer = function() {
     const ruleBox = document.querySelector(".box2");
     const ruleBoxDisplay = ruleBox.style;
 
-    console.log(ruleBoxDisplay)
     starterDiv.addEventListener('click', () => {
         ruleBox.style.display = 'flex';
         ruleBox.classList.add("boxAppear");
@@ -90,3 +99,17 @@ const ruleDisplayer = function() {
 }
 
 ruleDisplayer();
+
+pokemon.init = function() {};
+pokemon.init();
+
+
+// OLD CODE - IGNORE
+// pokemon.playerTeamCreator = function(pokedata) {
+//     const fireChoice = pokedata[0].pokemon;
+//     // const waterChoice = pokedata[1];
+//     // const grassChoice = pokedata[2];
+//     console.log(fireChoice);
+//     const randomFire = fireChoice[getRandomInt(fireChoice.length)];
+//     console.log(randomFire);
+// }

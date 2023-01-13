@@ -1,10 +1,9 @@
 html {
-    background-color: yellow;
     height: 100vh;
     width: 100vw;
 }
-.Farhan{
-        
+
+.Farhan {
     .wrap {
         margin: 0;
         padding: 0;
@@ -14,43 +13,36 @@ html {
         flex-direction: column;
         justify-content: space-evenly;
     }
-
     .opponent,
     .player {
         height: 50%;
         width: 98vw;
     }
-
     .opponent {
         display: flex;
         justify-content: space-between;
     }
-
     .player {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
     }
-
     .gray,
     .ash,
     .healthBarOpponent,
     .healthBarPlayer {
         width: 50%;
     }
-
     .healthBarOpponent,
     .healthBarPlayer {
         height: 400px;
     }
-
     .healthBarPlayer {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-end;
     }
-
     .green {
         background-color: green;
         height: 20px;
@@ -58,7 +50,6 @@ html {
         border: solid black 3px;
         border-radius: 25px;
     }
-
     .healthBarPlayer button {
         margin-top: 10px;
         height: 200px;
@@ -68,7 +59,6 @@ html {
         background-color: rgb(226, 223, 223);
         font-family: 'Press Start 2P', cursive;
     }
-
     img {
         height: 400px;
         width: 400px;
