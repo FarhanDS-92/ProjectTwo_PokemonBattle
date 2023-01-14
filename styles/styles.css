@@ -87,8 +87,8 @@
 }
 
 .box3 {
-  height: 90%;
-  width: 90%;
+  height: 95%;
+  width: 95%;
   z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -109,6 +109,7 @@
 }
 .box3 h2 {
   text-transform: uppercase;
+  line-height: 150%;
 }
 .box3 p {
   font-size: 16px;
