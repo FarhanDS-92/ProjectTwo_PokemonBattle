@@ -38,6 +38,8 @@
 .box2 p {
   font-size: 16px;
   line-height: 200%;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 .box2 a {
   margin: 5%;
@@ -639,25 +641,6 @@ main {
   background-size: cover;
 }
 
-.continueButton {
-  background-color: skyblue;
-  color: #ffffff;
-  border: 2px solid #000000;
-  border-radius: 25px;
-  font-size: 20px;
-  -webkit-box-shadow: 1px 1px #403f3f;
-          box-shadow: 1px 1px #403f3f;
-  width: 250px;
-  height: 70px;
-  margin-top: 1%;
-  margin-bottom: 1%;
-}
-
-.continueButton:hover {
-  background-color: yellow;
-  translate: 1px 1px;
-}
-
 .box3 {
   height: 95%;
   width: 95%;
@@ -694,6 +677,10 @@ main {
   text-transform: uppercase;
   line-height: 150%;
 }
+.box3 h2 span {
+  font-weight: bold;
+  color: red;
+}
 .box3 p {
   font-size: 16px;
   line-height: 200%;
@@ -704,6 +691,26 @@ main {
   text-decoration: none;
   color: white;
   font-family: "Press Start 2P", cursive;
+}
+
+.continueButton {
+  background-color: skyblue;
+  color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 25px;
+  font-size: 20px;
+  -webkit-box-shadow: 1px 1px #403f3f;
+          box-shadow: 1px 1px #403f3f;
+  width: 250px;
+  height: 70px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-family: "Press Start 2P", cursive;
+}
+
+.continueButton:hover {
+  background-color: yellow;
+  translate: 1px 1px;
 }
 
 /* Define the animation */
@@ -735,6 +742,44 @@ main {
             transform: translateY(0);
   }
 }
+.battleWrapper {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url(../assets/j867_5bkq_180808.jpg);
+  background-size: cover;
+}
+
+.box4 {
+  height: 95%;
+  width: 95%;
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0.9;
+  margin: 0;
+}
+.box4 h2 {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 html {
   font-family: "Press Start 2P", cursive;
 }
