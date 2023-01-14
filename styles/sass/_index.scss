@@ -53,7 +53,7 @@ html {
 
         #menu {
             position: absolute;
-            width: 70em;
+            width: 75em;
             z-index: 1;
 
             display: flex;
@@ -61,18 +61,12 @@ html {
             text-align: center;
             align-items: center;
 
-
-            .menu-style{
-                // z-index: 1;
+            .firefire,.waterwater,.grassgrass{
                 background-color: gray;
-                height: 500px;
-                // display: flex;
-                // justify-content: space-between;
-                // text-align: center;
-                // align-items: center;
+                height: 450px;
                 img {
                     height: 300px;
-                    width: 20em;
+                    width: 25em;
                 }
             }
         }

@@ -145,7 +145,7 @@ html {
 }
 .Farhan .healthBarPlayer #menu {
   position: absolute;
-  width: 70em;
+  width: 75em;
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -158,13 +158,13 @@ html {
       -ms-flex-align: center;
           align-items: center;
 }
-.Farhan .healthBarPlayer #menu .menu-style {
+.Farhan .healthBarPlayer #menu .firefire, .Farhan .healthBarPlayer #menu .waterwater, .Farhan .healthBarPlayer #menu .grassgrass {
   background-color: gray;
-  height: 500px;
+  height: 450px;
 }
-.Farhan .healthBarPlayer #menu .menu-style img {
+.Farhan .healthBarPlayer #menu .firefire img, .Farhan .healthBarPlayer #menu .waterwater img, .Farhan .healthBarPlayer #menu .grassgrass img {
   height: 300px;
-  width: 20em;
+  width: 25em;
 }
 .Farhan .green {
   background-color: green;

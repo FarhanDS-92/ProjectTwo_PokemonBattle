@@ -1,5 +1,9 @@
 // create namespaced object that contains pokemon team of 3 pokemon(call that two times.once for player, once for opponent)
 const pokemon = {};
+const playerSprite = document.querySelector('#ashImg');
+let imgF;
+let imgW;
+let imgG;
 
 
 //     define endpoint
@@ -32,9 +36,6 @@ pokemon.promiseMenu = function (){
 };
 
 
-
-
-
 pokemon.playerTeamCreator = function (pokedata){
     pokedata.forEach(pokeType => {
         
@@ -57,7 +58,8 @@ pokemon.playerTeamCreator = function (pokedata){
             .then(results => {
                 return results.json();
             }).then(data => {
-                
+
+
                 const title = document.createElement('h3');
                 title.innerText = pokeName.toUpperCase();
 
@@ -65,18 +67,34 @@ pokemon.playerTeamCreator = function (pokedata){
                 typeOfPokemon.innerText = pokeTypeName;
 
                 const image = document.createElement('img');
-                image.src = data.sprites.front_default;
+                image.src = data.sprites.other["official-artwork"].front_default;
                 image.alt = pokeName;
-
+                
+                
                 const menu = document.createElement('div');
-                menu.classList.add('menu-style');
+                menu.classList.add(`${pokeTypeName}${pokeTypeName}`);
+
 
                 menu.appendChild(title);
                 menu.appendChild(image);
-                menu.appendChild(typeOfPokemon);
+                menu.appendChild(typeOfPokemon);             
 
+                if (pokeTypeName === "fire"){
+                    document.querySelector('.fire').appendChild(menu);
+                    let imgF = image.src;
+                    pokemon.setUpEventListenersMenuPlayerChoice(imgF);
 
-                document.querySelector('#menu').appendChild(menu);
+                } else if (pokeTypeName === "water")  {
+                    document.querySelector('.water').appendChild(menu);
+                    let imgW = image.src;
+                    pokemon.setUpEventListenersMenuPlayerChoice(imgW);
+
+                } else if (pokeTypeName === "grass"){
+                    document.querySelector('.grass').appendChild(menu);
+                    let imgG = image.src;
+                    pokemon.setUpEventListenersMenuPlayerChoice(imgG);
+                }
+                
             });
     });
 }
@@ -88,8 +106,27 @@ pokemon.setUpEventListenersMenu = function (){
     });
 } 
 
-pokemon.setUpEventListenersMenu();
 
+pokemon.setUpEventListenersMenuPlayerChoice = function (imgs){
+    document.querySelector('.firefire').addEventListener('click', function () {
+
+        playerSprite.src= imgs;
+
+
+    });
+    // document.querySelector('.water').addEventListener('click', function () {
+    //     console.log('hello')
+    // });
+    // document.querySelector('.grass').addEventListener('click', function () {
+    //     console.log('hello')
+    // });
+} 
+
+
+
+
+pokemon.setUpEventListenersMenu();
+// pokemon.setUpEventListenersMenuPlayerChoice();
         // const fullArray = [];
         // fullArray.push(...pokedata[0].pokemon, ...pokedata[1].pokemon, ...pokedata[2].pokemon);
         // console.log(fullArray);
