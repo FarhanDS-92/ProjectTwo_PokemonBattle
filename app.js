@@ -8,6 +8,9 @@ pokemon.urls = ['https://pokeapi.co/api/v2/type/10/', 'https://pokeapi.co/api/v2
 pokemon.urlPokeSprite = ['https://pokeapi.co/api/v2/pokemon/'];
 
 
+
+
+
 // fetch url
 const myResult = pokemon.urls.map((url) => {
     return fetch(url)
@@ -15,20 +18,83 @@ const myResult = pokemon.urls.map((url) => {
             return response.json();
         })
         .then((data) => {
-            console.log(data);
-            console.log(data.pokemon);
             return data;
         })
 });
 
-Promise.all(myResult)
-    .then(pokedata => {
-        console.log(pokedata);
-        const fullArray = [];
-        fullArray.push(...pokedata[0].pokemon, ...pokedata[1].pokemon, ...pokedata[2].pokemon);
-        console.log(fullArray);
-        pokemon.enemyPoke(pokedata);
+
+
+pokemon.promiseMenu = function (){
+    Promise.all(myResult)
+        .then(pokedata => {
+            pokemon.playerTeamCreator(pokedata);
+        });
+};
+
+
+
+
+
+pokemon.playerTeamCreator = function (pokedata){
+    pokedata.forEach(pokeType => {
+        
+        // getting random pokemont for each type 
+        const randomPoke = getRandomInt(pokeType.pokemon.length);
+        const playerPoke = pokeType.pokemon[randomPoke]; 
+        
+        //getting name of each pokemon
+        const pokeName = playerPoke.pokemon.name;
+        const pokeUrl = playerPoke.pokemon.url;
+
+        const pokeTypeName = pokeType.name;
+
+        console.log(pokeName);
+        console.log(pokeTypeName);
+
+
+        // fetch url for sprite
+        fetch(pokeUrl)
+            .then(results => {
+                return results.json();
+            }).then(data => {
+                
+                const title = document.createElement('h3');
+                title.innerText = pokeName.toUpperCase();
+
+                const typeOfPokemon = document.createElement('p');
+                typeOfPokemon.innerText = pokeTypeName;
+
+                const image = document.createElement('img');
+                image.src = data.sprites.front_default;
+                image.alt = pokeName;
+
+                const menu = document.createElement('div');
+                menu.classList.add('menu-style');
+
+                menu.appendChild(title);
+                menu.appendChild(image);
+                menu.appendChild(typeOfPokemon);
+
+
+                document.querySelector('#menu').appendChild(menu);
+            });
     });
+}
+
+
+pokemon.setUpEventListenersMenu = function (){
+    document.querySelector('.menu').addEventListener('click', function () {
+        pokemon.promiseMenu();
+    });
+} 
+
+pokemon.setUpEventListenersMenu();
+
+        // const fullArray = [];
+        // fullArray.push(...pokedata[0].pokemon, ...pokedata[1].pokemon, ...pokedata[2].pokemon);
+        // console.log(fullArray);
+
+
 
 //     provide randomized pokemon, 1 from each type, to the function in the form of an array
 
@@ -36,6 +102,7 @@ pokemon.enemyPoke = function(pokedata) {
     const chosenObj = pokedata[getRandomInt(3)];
     const randomChoice = getRandomInt(chosenObj.pokemon.length);
     const finalPoke = chosenObj.pokemon[randomChoice];
+
     console.log(finalPoke);
 }
 
@@ -77,16 +144,16 @@ function getRandomInt(max) {
 
 
 // Function to have the rulebox pop up on the start page
-const ruleDisplayer = function() {
-    const starterDiv = document.querySelector(".bg-image");
-    const ruleBox = document.querySelector(".box2");
-    const ruleBoxDisplay = ruleBox.style;
+// const ruleDisplayer = function() {
+//     const starterDiv = document.querySelector(".bg-image");
+//     const ruleBox = document.querySelector(".box2");
+//     const ruleBoxDisplay = ruleBox.style;
 
-    console.log(ruleBoxDisplay)
-    starterDiv.addEventListener('click', () => {
-        ruleBox.style.display = 'flex';
-        ruleBox.classList.add("boxAppear");
-    });
-}
+//     console.log(ruleBoxDisplay)
+//     starterDiv.addEventListener('click', () => {
+//         ruleBox.style.display = 'flex';
+//         ruleBox.classList.add("boxAppear");
+//     });
+// }
 
-ruleDisplayer();
+// ruleDisplayer();

@@ -143,6 +143,29 @@ html {
       -ms-flex-align: end;
           align-items: flex-end;
 }
+.Farhan .healthBarPlayer #menu {
+  position: absolute;
+  width: 70em;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.Farhan .healthBarPlayer #menu .menu-style {
+  background-color: gray;
+  height: 500px;
+}
+.Farhan .healthBarPlayer #menu .menu-style img {
+  height: 300px;
+  width: 20em;
+}
 .Farhan .green {
   background-color: green;
   height: 20px;
@@ -159,7 +182,7 @@ html {
   background-color: rgb(226, 223, 223);
   font-family: "Press Start 2P", cursive;
 }
-.Farhan img {
+.Farhan .gary img, .Farhan .ash img {
   height: 400px;
   width: 400px;
 }

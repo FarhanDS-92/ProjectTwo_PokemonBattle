@@ -3,6 +3,7 @@ html {
     height: 100vh;
     width: 100vw;
 }
+
 .Farhan{
         
     .wrap {
@@ -49,6 +50,32 @@ html {
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-end;
+
+        #menu {
+            position: absolute;
+            width: 70em;
+            z-index: 1;
+
+            display: flex;
+            justify-content: end;
+            text-align: center;
+            align-items: center;
+
+
+            .menu-style{
+                // z-index: 1;
+                background-color: gray;
+                height: 500px;
+                // display: flex;
+                // justify-content: space-between;
+                // text-align: center;
+                // align-items: center;
+                img {
+                    height: 300px;
+                    width: 20em;
+                }
+            }
+        }
     }
 
     .green {
@@ -69,8 +96,12 @@ html {
         font-family: 'Press Start 2P', cursive;
     }
 
-    img {
+    .gary img, .ash img {
         height: 400px;
         width: 400px;
     }
+
+
+
+
 }
