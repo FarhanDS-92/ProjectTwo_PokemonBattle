@@ -14,21 +14,24 @@ const myResult = pokemon.urls.map((url) => {
         })
         .then((data) => {
             // console.log(data);
-            // console.log(data.pokemon);
+            console.log(data.pokemon[0]);
             return data;
         })
 });
+
 
 //     provide randomized pokemon, 1 from each type, to the function in the form of an array
 // Function to give 3 random pokemons from each of the three types
 pokemon.teamCreator = function(pokedata) {
     console.log(pokedata);
-    pokedata.map(data => {
+    const pokemonTeam = pokedata.map(data => {
         // console.log(data.pokemon);
-        const randomPokemon = data.pokemon[getRandomInt(data.pokemon.length)];
+        // const randomPokemon = data.pokemon[getRandomInt(data.pokemon.length)];
+        return data.pokemon[getRandomInt(data.pokemon.length)];
         // return randomPokemon;
-        console.log(randomPokemon);
+        // console.log(randomPokemon);
     });
+    console.log(pokemonTeam);
 }
 
 Promise.all(myResult)
@@ -46,11 +49,29 @@ Promise.all(myResult)
     });
 
 pokemon.enemyPoke = function(pokedata) {
-    const chosenObj = pokedata[getRandomInt(3)];
-    const randomChoice = getRandomInt(chosenObj.pokemon.length);
-    const finalPoke = chosenObj.pokemon[randomChoice];
-    // const finalPokeImage = finalPoke
-    // console.log(finalPoke);
+        const chosenObj = pokedata[getRandomInt(3)];
+        const randomChoice = getRandomInt(chosenObj.pokemon.length);
+        const finalPoke = chosenObj.pokemon[randomChoice];
+        finalPokeType = chosenObj.name;
+        enemyDisplayer(finalPoke, finalPokeType);
+    }
+    // Function to display enemy pokemon
+const enemyDisplayer = function(finalPoke, finalPokeType) {
+    const enemyName = (finalPoke.pokemon.name);
+    const enemyPic = document.querySelector('.enemyPic');
+    fetch(`https://pokeapi.co/api/v2/pokemon/${enemyName}`)
+        .then((response) => {
+            return response.json();
+        }).then(data => {
+            console.log(data);
+            const sprites = data.sprites;
+            const spritesURL = sprites.other.home.front_default;
+            enemyPic.src = spritesURL;
+        })
+        .catch(error => console.error(error));
+    const enemyTypeDiv = document.querySelector(".enemyType");
+    enemyTypeDiv.textContent = `${finalPokeType}`;
+
 }
 
 function getRandomInt(max) {
@@ -99,6 +120,7 @@ const ruleDisplayer = function() {
 }
 
 ruleDisplayer();
+
 
 pokemon.init = function() {};
 pokemon.init();
