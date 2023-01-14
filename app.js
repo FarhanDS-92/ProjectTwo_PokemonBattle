@@ -65,6 +65,7 @@ const enemyDisplayer = function(finalPoke, finalPokeType) {
     const enemyName = (finalPoke.pokemon.name);
     const enemyPic = document.querySelectorAll('.enemyPic');
     console.log(enemyPic[0]);
+
     fetch(`https://pokeapi.co/api/v2/pokemon/${enemyName}`)
         .then((response) => {
             return response.json();
