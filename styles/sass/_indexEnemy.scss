@@ -4,6 +4,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(../assets/j867_5bkq_180808.jpg);
+    background-size: cover;
+}
+
+.continueButton {
+    background-color: skyblue;
+    color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 25px;
+    font-size: 20px;
+    box-shadow: 1px 1px #403f3f;
+    width: 250px;
+    height: 70px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.continueButton:hover {
+    background-color: yellow;
+    translate: 1px 1px;
 }
 
 .box3 {
@@ -15,9 +35,19 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    opacity: 1.0;
+    opacity: 0.9;
     margin: 0;
+    .enemyImage {
+        height: 40%;
+        opacity: 1.0;
+        animation: bounce 1s ease-in-out infinite;
+        .enemyPic {
+            height: 100%;
+            opacity: 1.0;
+        }
+    }
     h2 {
+        margin-top: 2%;
         text-transform: uppercase;
         line-height: 150%;
     }
@@ -29,6 +59,22 @@
         margin: 5%;
         text-transform: uppercase;
         text-decoration: none;
-        color: black;
+        color: white;
+        font-family: 'Press Start 2P', cursive;
+    }
+}
+
+
+/* Define the animation */
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
     }
 }

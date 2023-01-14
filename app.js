@@ -52,24 +52,25 @@ pokemon.enemyPoke = function(pokedata) {
         const chosenObj = pokedata[getRandomInt(3)];
         const randomChoice = getRandomInt(chosenObj.pokemon.length);
         const finalPoke = chosenObj.pokemon[randomChoice];
-        // const finalPokeImage = finalPoke
-        enemyDisplayer(finalPoke);
+        finalPokeType = chosenObj.name;
+        enemyDisplayer(finalPoke, finalPokeType);
     }
     // Function to display enemy pokemon
-const enemyDisplayer = function(finalPoke) {
+const enemyDisplayer = function(finalPoke, finalPokeType) {
     const enemyName = (finalPoke.pokemon.name);
     const enemyPic = document.querySelector('.enemyPic');
     fetch(`https://pokeapi.co/api/v2/pokemon/${enemyName}`)
         .then((response) => {
             return response.json();
         }).then(data => {
+            console.log(data);
             const sprites = data.sprites;
             const spritesURL = sprites.other.home.front_default;
             enemyPic.src = spritesURL;
         })
         .catch(error => console.error(error));
-
-    enemyPic.src
+    const enemyTypeDiv = document.querySelector(".enemyType");
+    enemyTypeDiv.textContent = `${finalPokeType}`;
 
 }
 
