@@ -21,24 +21,27 @@ const myResult = pokemon.urls.map((url) => {
 // provide randomized pokemon, 1 from each type, to the function in the form of an array
 // Function to give 3 random pokemons from each of the three types
 pokemon.teamCreator = function(pokedata) {
-    // console.log(pokedata);
-    const pokemonTeam = pokedata.map(data => {
-        return data.pokemon[getRandomInt(data.pokemon.length)];
-
-    });
-
-    const pokemonTeamNames = pokemonTeam.map(data => {
-        return data.pokemon.name;
-    })
+    
 
 
+    // fire , water , grass
 }
 
 Promise.all(myResult)
     .then(pokedata => {
 
-        pokemon.teamCreator(pokedata);
+        const lengthF = pokedata[0].pokemon.length;
+        const lengthW = pokedata[1].pokemon.length;
+        const lengthG = pokedata[2].pokemon.length;
 
+        const playerFirePoke = pokedata[0].pokemon[getRandomInt(lengthF)];
+        const playerWaterPoke = pokedata[1].pokemon[getRandomInt(lengthW)];
+        const playerGrassPoke = pokedata[2].pokemon[getRandomInt(lengthG)];
+
+        
+
+        console.log(playerFirePoke);
+        
         // CURRENTLY NOT BEING USED - create a full array with all 3 pokemon types
         // const fullArray = [];
         // fullArray.push(...pokedata[0].pokemon, ...pokedata[1].pokemon, ...pokedata[2].pokemon);
