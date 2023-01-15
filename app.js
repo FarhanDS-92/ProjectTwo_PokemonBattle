@@ -13,34 +13,30 @@ const myResult = pokemon.urls.map((url) => {
             return response.json();
         })
         .then((data) => {
-            // console.log(data);
-            // console.log(data.pokemon[0]);
             return data;
         })
 });
 
 
-//     provide randomized pokemon, 1 from each type, to the function in the form of an array
+// provide randomized pokemon, 1 from each type, to the function in the form of an array
 // Function to give 3 random pokemons from each of the three types
 pokemon.teamCreator = function(pokedata) {
     // console.log(pokedata);
     const pokemonTeam = pokedata.map(data => {
-        // console.log(data.pokemon);
-        // const randomPokemon = data.pokemon[getRandomInt(data.pokemon.length)];
         return data.pokemon[getRandomInt(data.pokemon.length)];
-        // return randomPokemon;
-        // console.log(randomPokemon);
+
     });
-    console.log(pokemonTeam);
+
     const pokemonTeamNames = pokemonTeam.map(data => {
         return data.pokemon.name;
     })
-    console.log(pokemonTeamNames);
+
+
 }
 
 Promise.all(myResult)
     .then(pokedata => {
-        console.log(pokedata);
+
         pokemon.teamCreator(pokedata);
 
         // CURRENTLY NOT BEING USED - create a full array with all 3 pokemon types
@@ -56,7 +52,7 @@ pokemon.enemyPoke = function(pokedata) {
         const chosenObj = pokedata[getRandomInt(3)];
         const randomChoice = getRandomInt(chosenObj.pokemon.length);
         const finalPoke = chosenObj.pokemon[randomChoice];
-        console.log(finalPoke.pokemon.name);
+        
         finalPokeType = chosenObj.name;
         enemyDisplayer(finalPoke, finalPokeType);
     }
@@ -64,13 +60,13 @@ pokemon.enemyPoke = function(pokedata) {
 const enemyDisplayer = function(finalPoke, finalPokeType) {
     const enemyName = (finalPoke.pokemon.name);
     const enemyPic = document.querySelectorAll('.enemyPic');
-    console.log(enemyPic[0]);
+    
 
     fetch(`https://pokeapi.co/api/v2/pokemon/${enemyName}`)
         .then((response) => {
             return response.json();
         }).then(data => {
-            console.log(data);
+            
             const sprites = data.sprites;
             const spritesURL = sprites.other.home.front_default;
             enemyPic[0].src = spritesURL;
