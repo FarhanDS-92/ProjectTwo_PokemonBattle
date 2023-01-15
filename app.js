@@ -22,14 +22,14 @@ const myResult = pokemon.urls.map((url) => {
 // provide randomized pokemon, 1 from each type, to the function in the form of an array
 // Function to give 3 random pokemons from each of the three types
 
-
+//onclick function to help with showing/hiding pokemon menu selection
 function hideFunction() {
     document.getElementById("menu").style.display = "flex";
 }
 
 
 
-
+// function to append menu selection
 pokemon.teamCreator = function(playerTypePoke, type) {
 
     const pokeUrl = playerTypePoke.pokemon.url;
@@ -93,23 +93,26 @@ pokemon.teamCreator = function(playerTypePoke, type) {
     }
 }
 
+//event listener to replace image to the player image to that of the chosen pokemon
 pokemon.EventListenerMenu = function (playerTypePoke) {
-    // when users clicks drop-down menu
     document.querySelector('.fire').addEventListener('click', function () {
         const fqI = document.querySelector('.firefire');
         playerSprite.src = fqI.src;
+        playerSprite.alt = fqI.alt;
 
         document.getElementById("menu").style.display = "none";
     });
     document.querySelector('.water').addEventListener('click', function () {
         const wqI = document.querySelector('.waterwater');
         playerSprite.src = wqI.src;
+        playerSprite.alt = wqI.alt;
 
         document.getElementById("menu").style.display = "none";
     });
     document.querySelector('.grass').addEventListener('click', function () {
         const gqI = document.querySelector('.grassgrass');
         playerSprite.src = gqI.src;
+        playerSprite.alt = gqI.alt;
 
         document.getElementById("menu").style.display = "none";
     });
@@ -119,6 +122,7 @@ pokemon.EventListenerMenu = function (playerTypePoke) {
 Promise.all(myResult)
     .then(pokedata => {
 
+        //storing values to use for later
         const lengthF = pokedata[0].pokemon.length;
         const lengthW = pokedata[1].pokemon.length;
         const lengthG = pokedata[2].pokemon.length;
@@ -130,11 +134,6 @@ Promise.all(myResult)
         const playerFirePoke = pokedata[0].pokemon[getRandomInt(lengthF)];
         const playerWaterPoke = pokedata[1].pokemon[getRandomInt(lengthW)];
         const playerGrassPoke = pokedata[2].pokemon[getRandomInt(lengthG)];
-
-        // const firePokeName = playerFirePoke.pokemon.name;
-        // const waterPokeName = playerWaterPoke.pokemon.name;
-        // const grassPokeName = playerGrassPoke.pokemon.name;
-
 
         pokemon.teamCreator(playerFirePoke, pokeTypeF);
         pokemon.teamCreator(playerWaterPoke, pokeTypeW);
@@ -162,6 +161,7 @@ pokemon.enemyPoke = function(pokedata) {
         finalPokeType = chosenObj.name;
         enemyDisplayer(finalPoke, finalPokeType);
     }
+
     // Function to display enemy pokemon
 const enemyDisplayer = function(finalPoke, finalPokeType) {
     const enemyName = (finalPoke.pokemon.name);
