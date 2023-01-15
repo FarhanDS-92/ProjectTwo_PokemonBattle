@@ -144,6 +144,58 @@ html {
       -ms-flex-align: end;
           align-items: flex-end;
 }
+.Farhan .healthBarPlayer #menu {
+  position: absolute;
+  height: 400px;
+  width: 60em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+.Farhan .healthBarPlayer #menu .fire {
+  height: 100%;
+  width: 20em;
+  background-color: red;
+}
+.Farhan .healthBarPlayer #menu .fire p {
+  margin-top: 0;
+}
+.Farhan .healthBarPlayer #menu .fire img {
+  height: 300px;
+  width: 20em;
+}
+.Farhan .healthBarPlayer #menu .water {
+  height: 100%;
+  width: 20em;
+  background-color: blue;
+}
+.Farhan .healthBarPlayer #menu .water p {
+  margin-top: 0;
+}
+.Farhan .healthBarPlayer #menu .water img {
+  height: 300px;
+  width: 20em;
+}
+.Farhan .healthBarPlayer #menu .grass {
+  height: 100%;
+  width: 20em;
+  background-color: green;
+}
+.Farhan .healthBarPlayer #menu .grass p {
+  margin-top: 0;
+}
+.Farhan .healthBarPlayer #menu .grass img {
+  height: 300px;
+  width: 20em;
+}
 .Farhan .green {
   background-color: green;
   height: 20px;

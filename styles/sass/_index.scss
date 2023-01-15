@@ -13,26 +13,31 @@ html {
         flex-direction: column;
         justify-content: space-evenly;
     }
+
     .opponent,
     .player {
         height: 50%;
         width: 98vw;
     }
+
     .opponent {
         display: flex;
         justify-content: space-between;
     }
+
     .player {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
     }
+
     .gray,
     .ash,
     .healthBarOpponent,
     .healthBarPlayer {
         width: 50%;
     }
+
     .healthBarOpponent,
     .healthBarPlayer {
         height: 400px;
@@ -42,7 +47,64 @@ html {
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-end;
+
+        #menu {
+            
+            position: absolute;
+            height: 400px;
+            width: 60em;
+
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+
+            display: none;
+
+            .fire{
+                p{
+                    margin-top: 0;
+                }
+                height: 100%;
+                width: 20em;
+                background-color: red;
+
+                img {
+                    height: 300px;
+                    width: 20em;
+                }
+            }
+            .water{
+                p {
+                        margin-top: 0;
+                    }
+                height: 100%;
+                width: 20em;
+                background-color: blue;
+
+                img {
+                        height: 300px;
+                        width: 20em;
+                    }
+            }
+            
+            .grass {
+                p {
+                        margin-top: 0;
+                    }
+                height: 100%;
+                width: 20em;
+                background-color: green;
+
+                img {
+                        height: 300px;
+                        width: 20em;
+                    }
+            }
+            
+        }
     }
+
     .green {
         background-color: green;
         height: 20px;
@@ -50,6 +112,7 @@ html {
         border: solid black 3px;
         border-radius: 25px;
     }
+
     .healthBarPlayer button {
         margin-top: 10px;
         height: 200px;
@@ -59,23 +122,9 @@ html {
         background-color: rgb(226, 223, 223);
         font-family: 'Press Start 2P', cursive;
     }
+
     img {
         height: 400px;
         width: 400px;
     }
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
 }
