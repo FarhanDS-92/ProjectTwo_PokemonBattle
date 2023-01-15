@@ -100,6 +100,9 @@ pokemon.EventListenerMenu = function (playerTypePoke) {
         playerSprite.src = fqI.src;
         playerSprite.alt = fqI.alt;
 
+        const fNqI = document.querySelector('.ashName');
+        fNqI.innerText = fqI.alt.toUpperCase();
+
         document.getElementById("menu").style.display = "none";
     });
     document.querySelector('.water').addEventListener('click', function () {
@@ -107,12 +110,18 @@ pokemon.EventListenerMenu = function (playerTypePoke) {
         playerSprite.src = wqI.src;
         playerSprite.alt = wqI.alt;
 
+        const wNqI = document.querySelector('.ashName');
+        wNqI.innerText = wqI.alt.toUpperCase();
+
         document.getElementById("menu").style.display = "none";
     });
     document.querySelector('.grass').addEventListener('click', function () {
         const gqI = document.querySelector('.grassgrass');
         playerSprite.src = gqI.src;
         playerSprite.alt = gqI.alt;
+
+        const gNqI = document.querySelector('.ashName');
+        gNqI.innerText = gqI.alt.toUpperCase();
 
         document.getElementById("menu").style.display = "none";
     });
