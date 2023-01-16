@@ -32,7 +32,7 @@
                 <p>Greetings, Pokemon trainer! Are you ready for your battle? On the next page your opponent's randomly chosen pokemon will present itself. Your job is to select the best pokemon from your team of three to counter the enemy pokemon's type.
                     Good luck!!!</p>
                 <!-- <a href="./index.html">continue</a> -->
-                <button class="continueButton"><a href="./index.html">continue</a></button>
+                <button class="continueButton"><a href="./battlePage.html">continue</a></button>
 
             </div>
             <div class="bird">
@@ -45,7 +45,20 @@
 
     </main>
 
-    <script src="app.js"></script>
+    <script>
+        const ruleDisplayer = function() {
+            const starterDiv = document.querySelector(".bg-image");
+            const ruleBox = document.querySelector(".box2");
+            // const ruleBoxDisplay = ruleBox.style;
+
+            starterDiv.addEventListener('click', () => {
+                ruleBox.style.display = 'flex';
+                ruleBox.classList.add("boxAppear");
+            });
+        }
+
+        ruleDisplayer();
+    </script>
 </body>
 
 </html>

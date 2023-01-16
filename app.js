@@ -100,14 +100,9 @@ pokemon.teamCreator = function(playerTypePoke, type) {
 }
 
 //event listener to replace image to the player image to that of the chosen pokemon
-<<<<<<< HEAD
 pokemon.EventListenerMenu = function(playerTypePoke) {
-    document.querySelector('.fire').addEventListener('click', function() {
-=======
-pokemon.EventListenerMenu = function (playerTypePoke) {
 
-    document.querySelector('.fire').addEventListener('click', function () {
->>>>>>> development-branch
+    document.querySelector('.fire').addEventListener('click', function() {
         const fqI = document.querySelector('.firefire');
         playerSprite.src = fqI.src;
         playerSprite.alt = fqI.alt;
@@ -197,26 +192,18 @@ Promise.all(myResult)
 
 
 pokemon.enemyPoke = function(pokedata) {
-<<<<<<< HEAD
     const chosenObj = pokedata[getRandomInt(3)];
-    const randomChoice = getRandomInt(chosenObj.pokemon.length);
+    const randomChoice = getRandomInt(50);
     const finalPoke = chosenObj.pokemon[randomChoice];
-=======
-        const chosenObj = pokedata[getRandomInt(3)];
-        const randomChoice = getRandomInt(50);
-        const finalPoke = chosenObj.pokemon[randomChoice];
-        
-        finalPokeType = chosenObj.name;
-        console.log(finalPokeType);
-        enemyDisplayer(finalPoke, finalPokeType);
-
-        return finalPokeType
-    }
->>>>>>> development-branch
+    console.log(finalPoke);
 
     finalPokeType = chosenObj.name;
+    console.log(finalPokeType);
     enemyDisplayer(finalPoke, finalPokeType);
+
+    return finalPokeType
 }
+
 
 // Function to display enemy pokemon
 const enemyDisplayer = function(finalPoke, finalPokeType) {
@@ -279,7 +266,7 @@ function getRandomInt(max) {
 // const ruleDisplayer = function() {
 //     const starterDiv = document.querySelector(".bg-image");
 //     const ruleBox = document.querySelector(".box2");
-//     const ruleBoxDisplay = ruleBox.style;
+//     // const ruleBoxDisplay = ruleBox.style;
 
 //     starterDiv.addEventListener('click', () => {
 //         ruleBox.style.display = 'flex';
@@ -289,16 +276,21 @@ function getRandomInt(max) {
 
 // ruleDisplayer();
 
-const button1 = document.querySelector("#continueToFight");
-console.log(button1);
 
-const pageTurner = function() {
+
+const button1 = document.querySelector("#continueToFight");
+const pageOne = document.querySelector(".testWrapper");
+const pageTwo = document.querySelector(".indexBattleScreen");
+const pageTurnerOne = function() {
     button1.addEventListener('click', () => {
+        pageOne.style.display = "none"
+        pageTwo.style.display = "contents"
 
     });
 }
 
-pageTurner();
+pageTurnerOne();
+
 
 
 pokemon.init = function() {};
