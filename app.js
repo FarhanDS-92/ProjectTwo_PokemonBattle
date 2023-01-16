@@ -100,14 +100,8 @@ pokemon.teamCreator = function(playerTypePoke, type) {
 }
 
 //event listener to replace image to the player image to that of the chosen pokemon
-<<<<<<< HEAD
 pokemon.EventListenerMenu = function(playerTypePoke) {
     document.querySelector('.fire').addEventListener('click', function() {
-=======
-pokemon.EventListenerMenu = function (playerTypePoke) {
-
-    document.querySelector('.fire').addEventListener('click', function () {
->>>>>>> development-branch
         const fqI = document.querySelector('.firefire');
         playerSprite.src = fqI.src;
         playerSprite.alt = fqI.alt;
@@ -197,11 +191,6 @@ Promise.all(myResult)
 
 
 pokemon.enemyPoke = function(pokedata) {
-<<<<<<< HEAD
-    const chosenObj = pokedata[getRandomInt(3)];
-    const randomChoice = getRandomInt(chosenObj.pokemon.length);
-    const finalPoke = chosenObj.pokemon[randomChoice];
-=======
         const chosenObj = pokedata[getRandomInt(3)];
         const randomChoice = getRandomInt(50);
         const finalPoke = chosenObj.pokemon[randomChoice];
@@ -211,11 +200,6 @@ pokemon.enemyPoke = function(pokedata) {
         enemyDisplayer(finalPoke, finalPokeType);
 
         return finalPokeType
-    }
->>>>>>> development-branch
-
-    finalPokeType = chosenObj.name;
-    enemyDisplayer(finalPoke, finalPokeType);
 }
 
 // Function to display enemy pokemon
