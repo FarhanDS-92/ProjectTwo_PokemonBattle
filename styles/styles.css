@@ -739,7 +739,6 @@ main {
 }
 .box3 a {
   margin: 5%;
-  text-transform: uppercase;
   text-decoration: none;
   color: white;
   font-family: "Press Start 2P", cursive;
@@ -753,11 +752,12 @@ main {
   font-size: 20px;
   -webkit-box-shadow: 1px 1px #403f3f;
           box-shadow: 1px 1px #403f3f;
-  width: 250px;
-  height: 70px;
+  width: 240px;
+  height: 60px;
   margin-top: 1%;
   margin-bottom: 1%;
   font-family: "Press Start 2P", cursive;
+  text-transform: uppercase;
 }
 
 .continueButton:hover {

@@ -39,15 +39,15 @@ pokemon.teamCreator = function(playerTypePoke, type) {
 
     const pokeType = document.createElement('p');
     pokeType.innerText = type.toUpperCase();
-    
+
     const image = document.createElement('img');
     image.src = '';
     image.alt = playerTypePoke.pokemon.name;
     image.classList.add(`${type}${type}`)
- 
- 
 
-    if (type === "fire"){
+
+
+    if (type === "fire") {
         const fq = document.querySelector('.fire')
         fq.appendChild(title);
         fq.appendChild(image);
@@ -62,7 +62,7 @@ pokemon.teamCreator = function(playerTypePoke, type) {
                 fqI.src = sprite;
             });
 
-    } else if (type === "water"){
+    } else if (type === "water") {
         const wq = document.querySelector('.water')
         wq.appendChild(title);
         wq.appendChild(image);
@@ -76,7 +76,7 @@ pokemon.teamCreator = function(playerTypePoke, type) {
                 const wqI = document.querySelector('.waterwater');
                 wqI.src = sprite;
             });
-    } else if (type === "grass"){
+    } else if (type === "grass") {
         const gq = document.querySelector('.grass')
         gq.appendChild(title);
         gq.appendChild(image);
@@ -94,8 +94,8 @@ pokemon.teamCreator = function(playerTypePoke, type) {
 }
 
 //event listener to replace image to the player image to that of the chosen pokemon
-pokemon.EventListenerMenu = function (playerTypePoke) {
-    document.querySelector('.fire').addEventListener('click', function () {
+pokemon.EventListenerMenu = function(playerTypePoke) {
+    document.querySelector('.fire').addEventListener('click', function() {
         const fqI = document.querySelector('.firefire');
         playerSprite.src = fqI.src;
         playerSprite.alt = fqI.alt;
@@ -105,7 +105,7 @@ pokemon.EventListenerMenu = function (playerTypePoke) {
 
         document.getElementById("menu").style.display = "none";
     });
-    document.querySelector('.water').addEventListener('click', function () {
+    document.querySelector('.water').addEventListener('click', function() {
         const wqI = document.querySelector('.waterwater');
         playerSprite.src = wqI.src;
         playerSprite.alt = wqI.alt;
@@ -115,7 +115,7 @@ pokemon.EventListenerMenu = function (playerTypePoke) {
 
         document.getElementById("menu").style.display = "none";
     });
-    document.querySelector('.grass').addEventListener('click', function () {
+    document.querySelector('.grass').addEventListener('click', function() {
         const gqI = document.querySelector('.grassgrass');
         playerSprite.src = gqI.src;
         playerSprite.alt = gqI.alt;
@@ -152,7 +152,7 @@ Promise.all(myResult)
         pokemon.EventListenerMenu(playerWaterPoke);
         pokemon.EventListenerMenu(playerGrassPoke);
 
-        
+
         // CURRENTLY NOT BEING USED - create a full array with all 3 pokemon types
         // const fullArray = [];
         // fullArray.push(...pokedata[0].pokemon, ...pokedata[1].pokemon, ...pokedata[2].pokemon);
@@ -163,19 +163,19 @@ Promise.all(myResult)
     });
 
 pokemon.enemyPoke = function(pokedata) {
-        const chosenObj = pokedata[getRandomInt(3)];
-        const randomChoice = getRandomInt(chosenObj.pokemon.length);
-        const finalPoke = chosenObj.pokemon[randomChoice];
-        
-        finalPokeType = chosenObj.name;
-        enemyDisplayer(finalPoke, finalPokeType);
-    }
+    const chosenObj = pokedata[getRandomInt(3)];
+    const randomChoice = getRandomInt(chosenObj.pokemon.length);
+    const finalPoke = chosenObj.pokemon[randomChoice];
 
-    // Function to display enemy pokemon
+    finalPokeType = chosenObj.name;
+    enemyDisplayer(finalPoke, finalPokeType);
+}
+
+// Function to display enemy pokemon
 const enemyDisplayer = function(finalPoke, finalPokeType) {
     const enemyName = (finalPoke.pokemon.name);
     const enemyPic = document.querySelectorAll('.enemyPic');
-    
+
 
     fetch(`https://pokeapi.co/api/v2/pokemon/${enemyName}`)
         .then((response) => {
@@ -229,22 +229,42 @@ function getRandomInt(max) {
 
 
 // Function to have the rulebox pop up on the start page
-const ruleDisplayer = function() {
-    const starterDiv = document.querySelector(".bg-image");
-    const ruleBox = document.querySelector(".box2");
-    const ruleBoxDisplay = ruleBox.style;
+// const ruleDisplayer = function() {
+//     const starterDiv = document.querySelector(".bg-image");
+//     const ruleBox = document.querySelector(".box2");
+//     const ruleBoxDisplay = ruleBox.style;
 
-    starterDiv.addEventListener('click', () => {
-        ruleBox.style.display = 'flex';
-        ruleBox.classList.add("boxAppear");
+//     starterDiv.addEventListener('click', () => {
+//         ruleBox.style.display = 'flex';
+//         ruleBox.classList.add("boxAppear");
+//     });
+// }
+
+// ruleDisplayer();
+
+const button1 = document.querySelector("#continueToFight");
+console.log(button1);
+
+const pageTurner = function() {
+    button1.addEventListener('click', () => {
+
     });
 }
 
-ruleDisplayer();
+pageTurner();
 
 
 pokemon.init = function() {};
 pokemon.init();
+const typeTextHolder = document.querySelector(".enemyType");
+
+function secondFunction() {
+    setTimeout(() => {
+        console.log(typeTextHolder.innerText)
+    }, 3000);
+}
+
+secondFunction();
 
 
 // OLD CODE - IGNORE
