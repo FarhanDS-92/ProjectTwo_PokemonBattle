@@ -260,18 +260,17 @@ function getRandomInt(max) {
 
 
 // Function to have the rulebox pop up on the start page
-// const ruleDisplayer = function() {
-//     const starterDiv = document.querySelector(".bg-image");
-//     const ruleBox = document.querySelector(".box2");
-//     const ruleBoxDisplay = ruleBox.style;
+const ruleDisplayer = function() {
+    const starterDiv = document.querySelector(".bg-image");
+    const ruleBox = document.querySelector(".box2");
 
-//     starterDiv.addEventListener('click', () => {
-//         ruleBox.style.display = 'flex';
-//         ruleBox.classList.add("boxAppear");
-//     });
-// }
+    starterDiv.addEventListener('click', () => {
+        ruleBox.style.display = 'flex';
+        ruleBox.classList.add("boxAppear");
+    });
+}
 
-// ruleDisplayer();
+ruleDisplayer();
 
 const button1 = document.querySelector("#continueToFight");
 console.log(button1);
