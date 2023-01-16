@@ -39,8 +39,8 @@
     </div>
     </div> -->
 
-    <div class="Farhan">
-        <header></header>
+    <div class="indexBattleScreen">
+        
 
         <main class="wrap">
             <div class="opponent">
@@ -49,15 +49,19 @@
                     <div class="green"></div>
                 </div>
 
-                <div class="gary">
-                    <img src="./assets/gary.png" alt="Opponent Sprite, named Gary">
+                <div class="button">
+                    <input type="image" src="./assets/fight.png" alt="Fight Button" height="150" width="250" class="fightButton" onclick="fightFunction()">
                 </div>
 
+                <div class="gary">
+                    <img class="garyImg" src="./assets/gary.png" alt="Opponent Sprite, named Gary">
+                </div>
             </div>
 
             <div class="player">
                 <div class="ash">
                     <img class="ashImg" src="./assets/ash.png" alt="Player Sprite, named Ash">
+                    <span class="playerType"></span>
                 </div>
 
                 <div class="healthBarPlayer">
@@ -72,8 +76,6 @@
                 </div>
             </div>
         </main>
-
-        <footer></footer>
     </div>
 
     <script src="app.js"></script>

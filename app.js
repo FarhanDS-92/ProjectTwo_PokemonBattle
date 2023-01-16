@@ -1,11 +1,18 @@
 // create namespaced object that contains pokemon team of 3 pokemon(call that two times.once for player, once for opponent)
 const pokemon = {};
 const playerSprite = document.querySelector('.ashImg');
+const pqS = document.querySelector('.playerType');
 
 //     define endpoint
 //     filter array down to 3 types(water, fire, grass)
 pokemon.urls = ['https://pokeapi.co/api/v2/type/10/', 'https://pokeapi.co/api/v2/type/11/', 'https://pokeapi.co/api/v2/type/12/'];
 pokemon.urlPokeSprite = ['https://pokeapi.co/api/v2/pokemon/'];
+
+
+
+
+
+
 
 // fetch url
 const myResult = pokemon.urls.map((url) => {
@@ -17,7 +24,6 @@ const myResult = pokemon.urls.map((url) => {
             return data;
         })
 });
-
 
 // provide randomized pokemon, 1 from each type, to the function in the form of an array
 // Function to give 3 random pokemons from each of the three types
@@ -95,6 +101,7 @@ pokemon.teamCreator = function(playerTypePoke, type) {
 
 //event listener to replace image to the player image to that of the chosen pokemon
 pokemon.EventListenerMenu = function (playerTypePoke) {
+
     document.querySelector('.fire').addEventListener('click', function () {
         const fqI = document.querySelector('.firefire');
         playerSprite.src = fqI.src;
@@ -104,6 +111,11 @@ pokemon.EventListenerMenu = function (playerTypePoke) {
         fNqI.innerText = fqI.alt.toUpperCase();
 
         document.getElementById("menu").style.display = "none";
+
+        const fqS = document.querySelector(".playerType");
+        fqS.innerText = "fire";
+
+
     });
     document.querySelector('.water').addEventListener('click', function () {
         const wqI = document.querySelector('.waterwater');
@@ -114,6 +126,10 @@ pokemon.EventListenerMenu = function (playerTypePoke) {
         wNqI.innerText = wqI.alt.toUpperCase();
 
         document.getElementById("menu").style.display = "none";
+
+        const wqS = document.querySelector(".playerType");
+        wqS.innerText = "water";
+
     });
     document.querySelector('.grass').addEventListener('click', function () {
         const gqI = document.querySelector('.grassgrass');
@@ -124,12 +140,17 @@ pokemon.EventListenerMenu = function (playerTypePoke) {
         gNqI.innerText = gqI.alt.toUpperCase();
 
         document.getElementById("menu").style.display = "none";
+
+        const gqS = document.querySelector(".playerType");
+        gqS.innerText = "grass";
+
     });
 }
 
 
 Promise.all(myResult)
     .then(pokedata => {
+
 
         //storing values to use for later
         const lengthF = pokedata[0].pokemon.length;
@@ -139,6 +160,7 @@ Promise.all(myResult)
         const pokeTypeF = pokedata[0].name;
         const pokeTypeW = pokedata[1].name;
         const pokeTypeG = pokedata[2].name;
+
 
         const playerFirePoke = pokedata[0].pokemon[getRandomInt(lengthF)];
         const playerWaterPoke = pokedata[1].pokemon[getRandomInt(lengthW)];
@@ -162,13 +184,18 @@ Promise.all(myResult)
         pokemon.enemyPoke(pokedata);
     });
 
+
+
 pokemon.enemyPoke = function(pokedata) {
         const chosenObj = pokedata[getRandomInt(3)];
         const randomChoice = getRandomInt(chosenObj.pokemon.length);
         const finalPoke = chosenObj.pokemon[randomChoice];
         
         finalPokeType = chosenObj.name;
+        console.log(finalPokeType);
         enemyDisplayer(finalPoke, finalPokeType);
+
+        return finalPokeType
     }
 
     // Function to display enemy pokemon
