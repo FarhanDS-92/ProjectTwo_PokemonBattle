@@ -101,7 +101,6 @@ pokemon.teamCreator = function(playerTypePoke, type) {
 
 //event listener to replace image to the player image to that of the chosen pokemon
 pokemon.EventListenerMenu = function(playerTypePoke) {
-
     document.querySelector('.fire').addEventListener('click', function() {
         const fqI = document.querySelector('.firefire');
         playerSprite.src = fqI.src;
@@ -195,7 +194,6 @@ pokemon.enemyPoke = function(pokedata) {
     const chosenObj = pokedata[getRandomInt(3)];
     const randomChoice = getRandomInt(50);
     const finalPoke = chosenObj.pokemon[randomChoice];
-    console.log(finalPoke);
 
     finalPokeType = chosenObj.name;
     console.log(finalPokeType);
@@ -259,22 +257,6 @@ function getRandomInt(max) {
 
 // create a paragraph tag that states the winner in the header of the page
 //     (stretch goal: create a simple animation that shows the winner moving)
-
-
-
-// Function to have the rulebox pop up on the start page
-// const ruleDisplayer = function() {
-//     const starterDiv = document.querySelector(".bg-image");
-//     const ruleBox = document.querySelector(".box2");
-//     // const ruleBoxDisplay = ruleBox.style;
-
-//     starterDiv.addEventListener('click', () => {
-//         ruleBox.style.display = 'flex';
-//         ruleBox.classList.add("boxAppear");
-//     });
-// }
-
-// ruleDisplayer();
 
 
 
