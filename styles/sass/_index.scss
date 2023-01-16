@@ -177,14 +177,23 @@
     height: 400px;
     width: 400px;
 }
+.garyImg{
+    margin-right: 140px;
+}
 
 .button{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 
+    // display: none;
+
     .fightButton {
         z-index: 1;
         margin-bottom: -70px;
     }
+}
+
+.playerType{
+    display: none;
 }

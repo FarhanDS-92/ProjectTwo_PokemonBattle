@@ -270,6 +270,10 @@
   width: 400px;
 }
 
+.garyImg {
+  margin-right: 140px;
+}
+
 .button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -285,6 +289,10 @@
 .button .fightButton {
   z-index: 1;
   margin-bottom: -70px;
+}
+
+.playerType {
+  display: none;
 }
 
 html {

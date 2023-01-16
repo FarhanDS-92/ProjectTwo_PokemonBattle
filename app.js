@@ -1,6 +1,7 @@
 // create namespaced object that contains pokemon team of 3 pokemon(call that two times.once for player, once for opponent)
 const pokemon = {};
 const playerSprite = document.querySelector('.ashImg');
+const pqS = document.querySelector('.playerType');
 
 //     define endpoint
 //     filter array down to 3 types(water, fire, grass)
@@ -110,6 +111,11 @@ pokemon.EventListenerMenu = function (playerTypePoke) {
         fNqI.innerText = fqI.alt.toUpperCase();
 
         document.getElementById("menu").style.display = "none";
+
+        const fqS = document.querySelector(".playerType");
+        fqS.innerText = "fire";
+
+
     });
     document.querySelector('.water').addEventListener('click', function () {
         const wqI = document.querySelector('.waterwater');
@@ -120,6 +126,10 @@ pokemon.EventListenerMenu = function (playerTypePoke) {
         wNqI.innerText = wqI.alt.toUpperCase();
 
         document.getElementById("menu").style.display = "none";
+
+        const wqS = document.querySelector(".playerType");
+        wqS.innerText = "water";
+
     });
     document.querySelector('.grass').addEventListener('click', function () {
         const gqI = document.querySelector('.grassgrass');
@@ -130,10 +140,12 @@ pokemon.EventListenerMenu = function (playerTypePoke) {
         gNqI.innerText = gqI.alt.toUpperCase();
 
         document.getElementById("menu").style.display = "none";
+
+        const gqS = document.querySelector(".playerType");
+        gqS.innerText = "grass";
+
     });
 }
-
-
 
 
 Promise.all(myResult)
