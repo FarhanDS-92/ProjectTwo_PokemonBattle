@@ -22,7 +22,7 @@
 .opponent {
     display: flex;
     justify-content: space-between;
-    background-image: linear-gradient(rgba(0, 100, 22, 0.2), rgba(0, 255, 55, 0.2)), 
+    background-image: linear-gradient(rgba(0, 90, 20, 0.3), rgba(0, 255, 0, 0.1)), 
         url("../assets/garybatlle.png");
 }
 
@@ -30,7 +30,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    background-image: linear-gradient(rgba(0, 255, 55, 0.2), rgba(0, 100, 22, 0.2)), 
+    background-image: linear-gradient(rgba(0, 255, 0, 0.1), rgba(0, 90, 20, 0.3)), 
         url("../assets/ashbattle.png");
     background-size: cover;
 
@@ -178,4 +178,13 @@
     width: 400px;
 }
 
+.button{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
+    .fightButton {
+        z-index: 1;
+        margin-bottom: -70px;
+    }
+}
