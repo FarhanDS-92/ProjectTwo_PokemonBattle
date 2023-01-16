@@ -182,13 +182,14 @@
 }
 
 .button{
+
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 
-    // display: none;
+    display: none;
 
-    .fightButton {
+    #fightButton {
         z-index: 1;
         margin-bottom: -70px;
     }

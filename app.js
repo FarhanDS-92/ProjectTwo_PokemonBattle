@@ -115,6 +115,9 @@ pokemon.EventListenerMenu = function (playerTypePoke) {
         const fqS = document.querySelector(".playerType");
         fqS.innerText = "fire";
 
+        const fightButton = document.querySelector(".button");
+        fightButton.style.display = "flex"
+
 
     });
     document.querySelector('.water').addEventListener('click', function () {
@@ -130,6 +133,9 @@ pokemon.EventListenerMenu = function (playerTypePoke) {
         const wqS = document.querySelector(".playerType");
         wqS.innerText = "water";
 
+        const fightButton = document.querySelector(".button");
+        fightButton.style.display = "flex"
+
     });
     document.querySelector('.grass').addEventListener('click', function () {
         const gqI = document.querySelector('.grassgrass');
@@ -144,6 +150,9 @@ pokemon.EventListenerMenu = function (playerTypePoke) {
         const gqS = document.querySelector(".playerType");
         gqS.innerText = "grass";
 
+        const fightButton = document.querySelector(".button");
+        fightButton.style.display = "flex"
+
     });
 }
 
@@ -153,18 +162,14 @@ Promise.all(myResult)
 
 
         //storing values to use for later
-        const lengthF = pokedata[0].pokemon.length;
-        const lengthW = pokedata[1].pokemon.length;
-        const lengthG = pokedata[2].pokemon.length;
-
         const pokeTypeF = pokedata[0].name;
         const pokeTypeW = pokedata[1].name;
         const pokeTypeG = pokedata[2].name;
 
 
-        const playerFirePoke = pokedata[0].pokemon[getRandomInt(lengthF)];
-        const playerWaterPoke = pokedata[1].pokemon[getRandomInt(lengthW)];
-        const playerGrassPoke = pokedata[2].pokemon[getRandomInt(lengthG)];
+        const playerFirePoke = pokedata[0].pokemon[getRandomInt(50)];
+        const playerWaterPoke = pokedata[1].pokemon[getRandomInt(50)];
+        const playerGrassPoke = pokedata[2].pokemon[getRandomInt(50)];
 
         pokemon.teamCreator(playerFirePoke, pokeTypeF);
         pokemon.teamCreator(playerWaterPoke, pokeTypeW);
@@ -188,7 +193,7 @@ Promise.all(myResult)
 
 pokemon.enemyPoke = function(pokedata) {
         const chosenObj = pokedata[getRandomInt(3)];
-        const randomChoice = getRandomInt(chosenObj.pokemon.length);
+        const randomChoice = getRandomInt(50);
         const finalPoke = chosenObj.pokemon[randomChoice];
         
         finalPokeType = chosenObj.name;
