@@ -297,3 +297,70 @@ secondFunction();
 //     const randomFire = fireChoice[getRandomInt(fireChoice.length)];
 //     console.log(randomFire);
 // }
+
+
+
+
+
+pokemon.battleResults = function () {
+    document.querySelector('input').addEventListener('click', function(){ 
+
+    const brPlayerType = document.querySelector(".playerType");
+    const chosenPlayerType = brPlayerType.innerText;
+
+    console.log (chosenPlayerType);
+
+    const brEnemyType = document.querySelector(".enemyType");
+    const randomizedEnemyType = brEnemyType.innerText;
+
+    console.log(randomizedEnemyType);
+
+    const fO = document.querySelector(".finalOutcome");
+    const fO2 = document.querySelector(".box5");
+
+    console.log(fO2);
+
+    if (chosenPlayerType === "fire" && randomizedEnemyType === "fire") {
+        fO.innerText = "Draw";
+        fO2.style.display = "flex";
+
+    } else if (chosenPlayerType === "fire" && randomizedEnemyType === "water") {
+        fO.innerText = "You Lose";
+        fO2.style.display = "flex";
+
+    } else if (chosenPlayerType === "fire" && randomizedEnemyType === "grass") {
+        fO.innerText = "Victory";
+        fO2.style.display = "flex";
+
+    } else if (chosenPlayerType === "water" && randomizedEnemyType === "fire") {
+        fO.innerText = "Victory";
+        fO2.style.display = "flex";
+
+    } else if (chosenPlayerType === "water" && randomizedEnemyType === "water") {
+        fO.innerText = "Draw";
+        fO2.style.display = "flex";
+
+    } else if (chosenPlayerType === "water" && randomizedEnemyType === "grass") {
+        fO.innerText = "You Lose";
+        fO2.style.display = "flex";
+
+    } else if (chosenPlayerType === "grass" && randomizedEnemyType === "fire") {
+        fO.innerText = "You Lose";
+        fO2.style.display = "flex";
+
+    } else if (chosenPlayerType === "grass" && randomizedEnemyType === "water") {
+        fO.innerText = "Victory";
+        fO2.style.display = "flex";
+
+    } else if (chosenPlayerType === "grass" && randomizedEnemyType === "grass") {
+        fO.innerText = "Draw";
+        fO2.style.display = "flex";
+
+    }
+
+
+})
+}
+
+
+pokemon.battleResults();
