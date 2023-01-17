@@ -1,0 +1,186 @@
+.indexBattleScreen {
+    width: 100vw;
+    display: none;
+    position: relative;
+}
+
+.box5 {
+    // display: none;
+    z-index: 5000;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+}
+
+.wrap {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.opponent,
+.player {
+    height: 50%;
+    width: 100%;
+}
+
+.opponent {
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(rgba(0, 90, 20, 0.3), rgba(0, 255, 0, 0.1)), url("../assets/garybatlle.png");
+}
+
+.player {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-image: linear-gradient(rgba(0, 255, 0, 0.1), rgba(0, 90, 20, 0.3)), url("../assets/ashbattle.png");
+    background-size: cover;
+}
+
+.gary,
+.ash,
+.healthBarOpponent,
+.healthBarPlayer {
+    width: 50%;
+    height: 100%;
+}
+
+.gary {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ash {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.healthBarOpponent,
+.healthBarPlayer {
+    height: 400px;
+}
+
+.healthBarPlayer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    #menu {
+        position: absolute;
+        height: 400px;
+        width: 60em;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        display: none;
+        border-radius: 5px;
+        padding: 10px;
+        line-height: 16px;
+        background: rgb(177, 177, 177);
+        border: 4px solid white;
+        box-shadow: 0 2px 0 2px black, inset 0 2px 0 2px black, 0 0 0 2px black, inset 0 0 0 2px black;
+        .fire {
+            p {
+                margin-top: 0;
+            }
+            height: 100%;
+            width: 18em;
+            background: rgb(177,
+            177,
+            177);
+            img {
+                height: 300px;
+                width: 18em;
+            }
+        }
+        .water {
+            p {
+                margin-top: 0;
+            }
+            height: 100%;
+            width: 18em;
+            background: rgb(177,
+            177,
+            177);
+            img {
+                height: 300px;
+                width: 18em;
+            }
+        }
+        .grass {
+            p {
+                margin-top: 0;
+            }
+            height: 100%;
+            width: 18em;
+            background: rgb(177,
+            177,
+            177);
+            img {
+                height: 300px;
+                width: 18em;
+            }
+        }
+    }
+}
+
+.green {
+    background-color: green;
+    height: 20px;
+    width: 600px;
+    border: solid black 3px;
+    border-radius: 25px;
+}
+
+.menuButton {
+    font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 10px;
+    height: 200px;
+    width: 600px;
+    border-radius: 5px;
+    padding: 10px;
+    line-height: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 4px solid white;
+    box-shadow: 0 2px 0 2px black, inset 0 2px 0 2px black, 0 0 0 2px black, inset 0 0 0 2px black;
+}
+
+.menuButton:hover,
+.menuButton:focus {
+    background: rgba(177, 177, 177, 0.8);
+}
+
+.ashImg,
+.garyImg {
+    height: 400px;
+    width: 400px;
+}
+
+.garyImg {
+    margin-right: 140px;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    display: none;
+    #fightButton {
+        z-index: 1;
+        margin-bottom: -70px;
+    }
+}
+
+.playerType {
+    display: none;
+}
