@@ -112,7 +112,7 @@ pokemon.EventListenerMenu = function(playerTypePoke) {
         document.getElementById("menu").style.display = "none";
 
         const fqS = document.querySelector(".playerType");
-        fqS.innerText = "fire";
+        fqS.innerText = "FIRE";
 
         const fightButton = document.querySelector(".button");
         fightButton.style.display = "flex"
@@ -130,7 +130,7 @@ pokemon.EventListenerMenu = function(playerTypePoke) {
         document.getElementById("menu").style.display = "none";
 
         const wqS = document.querySelector(".playerType");
-        wqS.innerText = "water";
+        wqS.innerText = "WATER";
 
         const fightButton = document.querySelector(".button");
         fightButton.style.display = "flex"
@@ -147,7 +147,7 @@ pokemon.EventListenerMenu = function(playerTypePoke) {
         document.getElementById("menu").style.display = "none";
 
         const gqS = document.querySelector(".playerType");
-        gqS.innerText = "grass";
+        gqS.innerText = "GRASS";
 
         const fightButton = document.querySelector(".button");
         fightButton.style.display = "flex"
@@ -191,17 +191,16 @@ Promise.all(myResult)
 
 
 pokemon.enemyPoke = function(pokedata) {
-    const chosenObj = pokedata[getRandomInt(3)];
-    const randomChoice = getRandomInt(50);
-    const finalPoke = chosenObj.pokemon[randomChoice];
+        const chosenObj = pokedata[getRandomInt(3)];
+        const randomChoice = getRandomInt(50);
+        const finalPoke = chosenObj.pokemon[randomChoice];
+        
+        finalPokeType = chosenObj.name;
+        console.log(finalPokeType);
+        enemyDisplayer(finalPoke, finalPokeType);
 
-    finalPokeType = chosenObj.name;
-    console.log(finalPokeType);
-    enemyDisplayer(finalPoke, finalPokeType);
-
-    return finalPokeType
+        return finalPokeType
 }
-
 
 // Function to display enemy pokemon
 const enemyDisplayer = function(finalPoke, finalPokeType) {
@@ -260,19 +259,16 @@ function getRandomInt(max) {
 
 
 
-const button1 = document.querySelector("#continueToFight");
-const pageOne = document.querySelector(".testWrapper");
-const pageTwo = document.querySelector(".indexBattleScreen");
-const pageTurnerOne = function() {
-    button1.addEventListener('click', () => {
-        pageOne.style.display = "none"
-        pageTwo.style.display = "contents"
+// const button1 = document.querySelector("#continueToFight");
+// console.log(button1);
 
-    });
-}
+// const pageTurner = function() {
+//     button1.addEventListener('click', () => {
 
-pageTurnerOne();
+//     });
+// }
 
+// pageTurner();
 
 
 pokemon.init = function() {};
@@ -297,3 +293,47 @@ secondFunction();
 //     const randomFire = fireChoice[getRandomInt(fireChoice.length)];
 //     console.log(randomFire);
 // }
+
+
+const battleResults = function () {
+    const brPlayerType = document.querySelector(".playerType");
+    const chosenPlayerType = brPlayerType.innerText;
+
+    const brEnemyType = document.querySelector(".enemyType");
+    const randomizedEnemyType = brEnemyType.innerText;
+
+    if (chosenPlayerType === "FIRE" && randomizedEnemyType === "FIRE") {
+        return "DRAW"
+
+    } else if (chosenPlayerType === "FIRE" && randomizedEnemyType === "WATER") {
+        return "YOU LOSE"
+
+    } else if (chosenPlayerType === "FIRE" && randomizedEnemyType === "GRASS") {
+        return "VICTORY"
+
+    } else if (chosenPlayerType === "WATER" && randomizedEnemyType === "FIRE") {
+        return "VICTORY"
+
+    } else if (chosenPlayerType === "WATER" && randomizedEnemyType === "WATER") {
+        return "DRAW"
+
+    } else if (chosenPlayerType === "WATER" && randomizedEnemyType === "GRASS") {
+        return "YOU LOSE"
+
+    } else if (chosenPlayerType === "GRASS" && randomizedEnemyType === "FIRE") {
+        return "YOU LOSE"
+
+    } else if (chosenPlayerType === "GRASS" && randomizedEnemyType === "WATER") {
+        return "VICTORY"
+
+    } else if (chosenPlayerType === "GRASS" && randomizedEnemyType === "GRASS") {
+        return "DRAW"
+
+    }
+}
+
+
+
+function fightFunction(){
+    console.log(battleResults());
+};
