@@ -191,16 +191,17 @@ Promise.all(myResult)
 
 
 pokemon.enemyPoke = function(pokedata) {
-        const chosenObj = pokedata[getRandomInt(3)];
-        const randomChoice = getRandomInt(50);
-        const finalPoke = chosenObj.pokemon[randomChoice];
-        
-        finalPokeType = chosenObj.name;
-        console.log(finalPokeType);
-        enemyDisplayer(finalPoke, finalPokeType);
+    const chosenObj = pokedata[getRandomInt(3)];
+    const randomChoice = getRandomInt(50);
+    const finalPoke = chosenObj.pokemon[randomChoice];
 
-        return finalPokeType
+    finalPokeType = chosenObj.name;
+    console.log(finalPokeType);
+    enemyDisplayer(finalPoke, finalPokeType);
+
+    return finalPokeType
 }
+
 
 // Function to display enemy pokemon
 const enemyDisplayer = function(finalPoke, finalPokeType) {
@@ -260,15 +261,18 @@ function getRandomInt(max) {
 
 
 const button1 = document.querySelector("#continueToFight");
-console.log(button1);
-
-const pageTurner = function() {
+const pageOne = document.querySelector(".testWrapper");
+const pageTwo = document.querySelector(".indexBattleScreen");
+const pageTurnerOne = function() {
     button1.addEventListener('click', () => {
+        pageOne.style.display = "none"
+        pageTwo.style.display = "contents"
 
     });
 }
 
-pageTurner();
+pageTurnerOne();
+
 
 
 pokemon.init = function() {};

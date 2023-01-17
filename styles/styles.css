@@ -74,8 +74,24 @@
             transform: scaleX(1) scaleY(1);
   }
 }
+.box5 {
+  display: none;
+  z-index: 5000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .indexBattleScreen {
   width: 100vw;
+  display: none;
+  position: relative;
+}
+
+.box5 {
+  z-index: 5000;
 }
 
 .wrap {
@@ -261,11 +277,13 @@
           box-shadow: 0 2px 0 2px black, inset 0 2px 0 2px black, 0 0 0 2px black, inset 0 0 0 2px black;
 }
 
-.menuButton:hover, .menuButton:focus {
+.menuButton:hover,
+.menuButton:focus {
   background: rgba(177, 177, 177, 0.8);
 }
 
-.ashImg, .garyImg {
+.ashImg,
+.garyImg {
   height: 400px;
   width: 400px;
 }
@@ -887,6 +905,7 @@ main {
           align-items: center;
   background-image: url(../assets/j867_5bkq_180808.jpg);
   background-size: cover;
+  display: none;
 }
 
 .box4 {
