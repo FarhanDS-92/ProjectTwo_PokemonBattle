@@ -2,20 +2,19 @@
     width: 100vw;
     display: none;
     position: relative;
+    background-image: linear-gradient(rgba(0, 90, 20, 0.3), rgba(0, 255, 0, 0.1), rgba(0, 255, 0, 0.1), rgba(0, 90, 20, 0.3)), url("../assets/Capture.PNG");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .box5 {
-    // display: none;
     z-index: 5000;
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
 }
 
 .wrap {
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -25,21 +24,18 @@
 .opponent,
 .player {
     height: 50%;
-    width: 100%;
+    width: 100vw;
 }
 
 .opponent {
     display: flex;
     justify-content: space-between;
-    background-image: linear-gradient(rgba(0, 90, 20, 0.3), rgba(0, 255, 0, 0.1)), url("../assets/garybatlle.png");
 }
 
 .player {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    background-image: linear-gradient(rgba(0, 255, 0, 0.1), rgba(0, 90, 20, 0.3)), url("../assets/ashbattle.png");
-    background-size: cover;
 }
 
 .gary,

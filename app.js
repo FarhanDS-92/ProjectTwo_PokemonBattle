@@ -236,7 +236,7 @@ pokemon.pageTurnerOne = function() {
 
     button1.addEventListener('click', () => {
         pageOne.style.display = "none"
-        pageTwo.style.display = "contents"
+        pageTwo.style.display = "flex"
 
     });
 }
