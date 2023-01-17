@@ -98,7 +98,7 @@
   position: relative;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 90, 20, 0.3)), color-stop(rgba(0, 255, 0, 0.1)), color-stop(rgba(0, 255, 0, 0.1)), to(rgba(0, 90, 20, 0.3))), url("../assets/Capture.PNG");
   background-image: linear-gradient(rgba(0, 90, 20, 0.3), rgba(0, 255, 0, 0.1), rgba(0, 255, 0, 0.1), rgba(0, 90, 20, 0.3)), url("../assets/Capture.PNG");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
