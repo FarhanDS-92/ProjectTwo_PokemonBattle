@@ -96,8 +96,8 @@
   width: 100vw;
   display: none;
   position: relative;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 90, 20, 0.3)), color-stop(rgba(0, 255, 0, 0.1)), color-stop(rgba(0, 255, 0, 0.1)), to(rgba(0, 90, 20, 0.3))), url("../assets/Capture.PNG");
-  background-image: linear-gradient(rgba(0, 90, 20, 0.3), rgba(0, 255, 0, 0.1), rgba(0, 255, 0, 0.1), rgba(0, 90, 20, 0.3)), url("../assets/Capture.PNG");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 90, 20, 0.8)), color-stop(rgba(0, 255, 0, 0.6)), color-stop(rgba(0, 255, 0, 0.6)), to(rgba(0, 90, 20, 0.8))), url("../assets/Capture.PNG");
+  background-image: linear-gradient(rgba(0, 90, 20, 0.8), rgba(0, 255, 0, 0.6), rgba(0, 255, 0, 0.6), rgba(0, 90, 20, 0.8)), url("../assets/Capture.PNG");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -162,21 +162,31 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .ash {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .healthBarOpponent,
@@ -202,7 +212,7 @@
 .healthBarPlayer #menu {
   position: absolute;
   height: 400px;
-  width: 60em;
+  width: 900px;
   bottom: 0;
   right: 0;
   display: -webkit-box;
@@ -226,7 +236,7 @@
 }
 .healthBarPlayer #menu .fire {
   height: 100%;
-  width: 18em;
+  width: 34%;
   background: rgb(177, 177, 177);
 }
 .healthBarPlayer #menu .fire p {
@@ -234,11 +244,11 @@
 }
 .healthBarPlayer #menu .fire img {
   height: 300px;
-  width: 18em;
+  width: 100%;
 }
 .healthBarPlayer #menu .water {
   height: 100%;
-  width: 18em;
+  width: 33%;
   background: rgb(177, 177, 177);
 }
 .healthBarPlayer #menu .water p {
@@ -246,11 +256,11 @@
 }
 .healthBarPlayer #menu .water img {
   height: 300px;
-  width: 18em;
+  width: 100%;
 }
 .healthBarPlayer #menu .grass {
   height: 100%;
-  width: 18em;
+  width: 33%;
   background: rgb(177, 177, 177);
 }
 .healthBarPlayer #menu .grass p {
@@ -258,7 +268,7 @@
 }
 .healthBarPlayer #menu .grass img {
   height: 300px;
-  width: 18em;
+  width: 100%;
 }
 
 .green {
@@ -291,12 +301,15 @@
 
 .ashImg,
 .garyImg {
+  position: absolute;
   height: 400px;
   width: 400px;
+  z-index: 2;
 }
 
 .garyImg {
-  margin-right: 140px;
+  margin-bottom: 50px;
+  margin-left: 50px;
 }
 
 .button {
@@ -321,6 +334,110 @@
   display: none;
 }
 
+.gary .grassField1 {
+  height: 300px;
+  width: 600px;
+  z-index: 1;
+}
+
+.ash .grassField2 {
+  height: 500px;
+  width: 500px;
+  z-index: 1;
+  bottom: 0;
+}
+
+@media (max-width: 1400px) {
+  .healthBarPlayer #menu {
+    height: 400px;
+    width: 600px;
+  }
+  .green {
+    width: 400px;
+  }
+  .ashImg,
+.garyImg {
+    height: 300px;
+    width: 300px;
+  }
+  .grassField1 {
+    width: 500px;
+  }
+  .grassField2 {
+    height: 400px;
+    width: 400px;
+  }
+}
+@media (max-width: 1110px) {
+  .menuButton {
+    width: 400px;
+  }
+  .healthBarPlayer #menu {
+    height: 300px;
+    width: 500px;
+  }
+  .healthBarPlayer #menu .fire img, .healthBarPlayer #menu .water img, .healthBarPlayer #menu .grass img {
+    height: 200px;
+  }
+  .green {
+    width: 400px;
+  }
+  .ashImg,
+.garyImg {
+    height: 300px;
+    width: 300px;
+  }
+  .gary .grassField1 {
+    width: 400px;
+  }
+  .ash .grassField2 {
+    height: 400px;
+    width: 400px;
+  }
+}
+@media (max-width: 1000px) {
+  .healthBarPlayer #menu {
+    height: 300px;
+    width: 500px;
+  }
+  .healthBarPlayer #menu .fire img,
+.healthBarPlayer #menu .water img,
+.healthBarPlayer #menu .grass img {
+    height: 200px;
+  }
+  .ashImg,
+.garyImg {
+    height: 300px;
+    width: 300px;
+  }
+  .green {
+    width: 300px;
+  }
+  .gary .grassField1 {
+    width: 400px;
+  }
+  .ash .grassField2 {
+    height: 400px;
+    width: 400px;
+  }
+}
+@media (max-width: 940px) {
+  .ashImg,
+.garyImg {
+    height: 200px;
+    width: 200x;
+  }
+  .green {
+    width: 300px;
+  }
+  .gary .grassField1 {
+    width: 300px;
+  }
+  .ash .grassField2 {
+    height: 300px;
+    width: 300px;
+  }
+}
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -708,6 +825,10 @@ main {
             transform: translateX(0px);
   }
 }
+.juno {
+  font-size: 10px;
+}
+
 @media (max-width: 940px) {
   .logo {
     width: 40%;
