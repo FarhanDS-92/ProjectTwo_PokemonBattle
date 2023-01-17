@@ -33,28 +33,31 @@ pokemon.promise = function (){
     Promise.all(pokemon.myResult)
         .then(pokedata => {
 
-            console.log(pokedata)
-            //storing values to use for later
+            //storing values to use for later, for each type for player Team
             const pokeTypeF = pokedata[0].name;
             const pokeTypeW = pokedata[1].name;
             const pokeTypeG = pokedata[2].name;
 
-
+            //We used 50 instead of .length function due to the fact that in higher numbers sprite images are not available
             const playerFirePoke = pokedata[0].pokemon[pokemon.getRandomInt(50)];
             const playerWaterPoke = pokedata[1].pokemon[pokemon.getRandomInt(50)];
             const playerGrassPoke = pokedata[2].pokemon[pokemon.getRandomInt(50)];
             
+            //stored variables for the enemy 
             const chosenObj = pokedata[pokemon.getRandomInt(3)];
             const randomChoice = pokemon.getRandomInt(50);
             const finalPoke = chosenObj.pokemon[randomChoice];
             const finalPokeType = chosenObj.name;
 
+            //function to append player team, called 3 times for each type
             pokemon.teamCreator(playerFirePoke, pokeTypeF);
             pokemon.teamCreator(playerWaterPoke, pokeTypeW);
             pokemon.teamCreator(playerGrassPoke, pokeTypeG);
 
-            
+            // event listener for clicking when play makes selection
             pokemon.EventListenerMenu(finalPoke);
+
+            //function to display/hide enemy pokemon before battle starts
             pokemon.enemyDisplayer(finalPoke, finalPokeType);
     
         });
@@ -76,7 +79,7 @@ pokemon.teamCreator = function(playerTypePoke, type) {
     image.alt = playerTypePoke.pokemon.name;
     image.classList.add(`${type}${type}`)
 
-
+    //if statement used so that when function is called 3 times with different arguments in order to append on page for each type
     if (type === "fire") {
         const fq = document.querySelector('.fire')
         fq.appendChild(title);
@@ -124,14 +127,13 @@ pokemon.teamCreator = function(playerTypePoke, type) {
 }
 
 //event listener to replace image to the player image to that of the chosen pokemon, while also putting Fight button to appear after selection, and to put enemy pokemon after player's choice
-
-
-
 pokemon.EventListenerMenu = function(finalPoke) {
     document.querySelector('.fire').addEventListener('click', function() {
+
         const fqI = document.querySelector('.firefire');
         pokemon.playerSprite.src = fqI.src;
         pokemon.playerSprite.alt = fqI.alt;
+
 
         const fNqI = document.querySelector('.ashName');
         fNqI.innerText = fqI.alt.toUpperCase();
