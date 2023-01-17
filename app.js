@@ -185,7 +185,7 @@ pokemon.EventListenerMenu = function(finalPoke) {
     });
 }
 
-//function to append enemy pokemon onto html
+//function to append enemy pokemon onto html and its name
 pokemon.enemySprite = function (enemyPokeGary) {
     const pokeUrl = enemyPokeGary.pokemon.url;
     fetch(pokeUrl)
@@ -196,6 +196,10 @@ pokemon.enemySprite = function (enemyPokeGary) {
             const eqI = document.querySelector('.garyImg');
             eqI.src = sprite;
             eqI.alt = `${enemyPokeGary.pokemon.name}`;
+
+            const pokeEnemyName = document.querySelector('.GaryName');
+            pokeEnemyName.innerText = enemyPokeGary.pokemon.name.toUpperCase();
+
         });
 }
 
