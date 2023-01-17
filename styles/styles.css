@@ -902,6 +902,10 @@ main {
     margin: 2%;
   }
 }
+.juno {
+  font-size: 10px;
+}
+
 .testWrapper {
   height: 100vh;
   width: 100vw;
