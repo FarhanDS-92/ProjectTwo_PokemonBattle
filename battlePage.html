@@ -16,76 +16,85 @@
 </head>
 
 <body>
-    <!-- https://www.vecteezy.com/vector-art/413580-a-beautiful-green-landscape -->
-
-
     <div class="testWrapper">
         <div class="box box3">
             <div class="logo">
                 <img src="./assets/pngegg.png" alt="pokemon logo">
             </div>
+
             <h2>Your opponent's pokemon is...</h2>
-            <div class="enemyImage"><img class="enemyPic" src="" alt=""></div>
+
+            <div class="enemyImage">
+                <img class="enemyPic" src="" alt="">
+            </div><!--end of enemyImage-->
+
             <h2>type: <span class="enemyType"></span> name: <span class="enemyName"></span></h2>
+
             <button class="continueButton" id="continueToFight">CONTINUE</button>
-        </div>
-    </div>
+        </div><!--end of box, box3-->
+    </div><!--end of text wrapper-->
+
     <div class="battleWrapper">
-
         <div class="box box4">
-            <div class="enemyImage"><img class="enemyPic " src="" alt=""></div>
+            <div class="enemyImage">
+                <img class="enemyPic " src="" alt="">
+            </div><!--end of box, box4-->
+
             <h2>VS</h2>
-            <div class="enemyImage"><img class="enemyPic" src="" alt=""></div>
-        </div>
-    </div>
-    </div>
+
+            <div class="enemyImage">
+                <img class="enemyPic" src="" alt="">
+            </div><!--end of enemy Image-->
+        </div><!--end of box, box4-->
+    </div><!--end of battle wrapper-->
+
+    
+    
     <div class="indexBattleScreen">
-
-
-
         <main class="wrap">
             <div class="opponent">
                 <div class="healthBarOpponent">
                     <h2>Gary</h2>
                     <div class="green"></div>
-                </div>
+                </div><!--end of health bar opponent-->
 
                 <div class="button">
                     <input type="image" src="./assets/fight.png" alt="Fight Button" height="150" width="250" id="fightButton">
-                </div>
+                </div><!--end of button-->
 
                 <div class="gary">
                     <img class="garyImg" src="./assets/gary.png" alt="Opponent Sprite, named Gary">
-                </div>
-            </div>
+                </div><!--end of gary img-->
+            </div><!--end of opponent-->
 
             <div class="player">
                 <div class="ash">
                     <img class="ashImg" src="./assets/ash.png" alt="Player Sprite, named Ash">
                     <span class="playerType"></span>
-                </div>
+                </div><!--end of ash image-->
 
                 <div class="healthBarPlayer">
                     <h2 class="ashName">Ash</h2>
+
                     <div class="green"></div>
+
                     <button class="menuButton" onclick="pokemon.hideFunction()">Choose Your Pokemon</button>
+
                     <div id="menu">
+
                         <div class="fire"></div>
                         <div class="water"></div>
                         <div class="grass"></div>
-                    </div>
-                </div>
-            </div>
-        </main>
 
+                    </div><!--end of menu-->
+                </div><!--end of player health bar-->
+            </div><!--end of player-->
+        </main><!--end of main-->
 
         <div class="box box5">
-
             <h2 class="finalOutcome"></h2>
-
-        </div>
-
-    </div>
+        </div> <!--end of box, box5-->
+    </div><!--end of indexBattleScreen wrapper-->
 
 
     <script src="app.js"></script>
