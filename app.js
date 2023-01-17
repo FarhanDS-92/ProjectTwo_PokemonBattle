@@ -257,7 +257,7 @@ function getRandomInt(max) {
 // create a paragraph tag that states the winner in the header of the page
 //     (stretch goal: create a simple animation that shows the winner moving)
 
-
+console.log("hello");
 
 // const button1 = document.querySelector("#continueToFight");
 // console.log(button1);
