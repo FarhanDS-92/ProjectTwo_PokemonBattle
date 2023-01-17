@@ -100,7 +100,7 @@ pokemon.teamCreator = function(playerTypePoke, type) {
 }
 
 //event listener to replace image to the player image to that of the chosen pokemon
-pokemon.EventListenerMenu = function(playerTypePoke) {
+pokemon.EventListenerMenu = function(finalPoke) {
     document.querySelector('.fire').addEventListener('click', function() {
         const fqI = document.querySelector('.firefire');
         playerSprite.src = fqI.src;
@@ -117,6 +117,7 @@ pokemon.EventListenerMenu = function(playerTypePoke) {
         const fightButton = document.querySelector(".button");
         fightButton.style.display = "flex"
 
+        pokemon.enemySprite(finalPoke);
 
     });
     document.querySelector('.water').addEventListener('click', function() {
@@ -135,6 +136,8 @@ pokemon.EventListenerMenu = function(playerTypePoke) {
         const fightButton = document.querySelector(".button");
         fightButton.style.display = "flex"
 
+        pokemon.enemySprite(finalPoke);
+
     });
     document.querySelector('.grass').addEventListener('click', function() {
         const gqI = document.querySelector('.grassgrass');
@@ -152,7 +155,25 @@ pokemon.EventListenerMenu = function(playerTypePoke) {
         const fightButton = document.querySelector(".button");
         fightButton.style.display = "flex"
 
+        pokemon.enemySprite(finalPoke);        
     });
+}
+
+
+pokemon.enemySprite = function (enemyPokeGary) {
+
+    const pokeUrl = enemyPokeGary.pokemon.url;
+
+
+    fetch(pokeUrl)
+        .then(results => {
+            return results.json();
+        }).then(data => {
+            const sprite = data.sprites.other["official-artwork"].front_default;
+            const eqI = document.querySelector('.garyImg');
+            eqI.src = sprite;
+            eqI.alt = `${enemyPokeGary.pokemon.name}`;
+        });
 }
 
 
@@ -169,42 +190,37 @@ Promise.all(myResult)
         const playerFirePoke = pokedata[0].pokemon[getRandomInt(50)];
         const playerWaterPoke = pokedata[1].pokemon[getRandomInt(50)];
         const playerGrassPoke = pokedata[2].pokemon[getRandomInt(50)];
+        
+        const chosenObj = pokedata[getRandomInt(3)];
+        const randomChoice = getRandomInt(50);
+        const finalPoke = chosenObj.pokemon[randomChoice];
+        const finalPokeType = chosenObj.name;
 
         pokemon.teamCreator(playerFirePoke, pokeTypeF);
         pokemon.teamCreator(playerWaterPoke, pokeTypeW);
         pokemon.teamCreator(playerGrassPoke, pokeTypeG);
 
-        pokemon.EventListenerMenu(playerFirePoke);
-        pokemon.EventListenerMenu(playerWaterPoke);
-        pokemon.EventListenerMenu(playerGrassPoke);
-
-
-        // CURRENTLY NOT BEING USED - create a full array with all 3 pokemon types
-        // const fullArray = [];
-        // fullArray.push(...pokedata[0].pokemon, ...pokedata[1].pokemon, ...pokedata[2].pokemon);
-        // console.log(fullArray);
-
-        // select enemy pokemon
-        pokemon.enemyPoke(pokedata);
+        
+        pokemon.EventListenerMenu(finalPoke);
+        pokemon.enemyDisplayer(finalPoke, finalPokeType);
+  
     });
 
 
 
-pokemon.enemyPoke = function(pokedata) {
-    const chosenObj = pokedata[getRandomInt(3)];
-    const randomChoice = getRandomInt(50);
-    const finalPoke = chosenObj.pokemon[randomChoice];
+// pokemon.enemyPoke = function(pokedata) {
+//     const chosenObj = pokedata[getRandomInt(3)];
+//     const randomChoice = getRandomInt(50);
+//     const finalPoke = chosenObj.pokemon[randomChoice];
+//     const finalPokeType = chosenObj.name;
 
-    finalPokeType = chosenObj.name;
-    console.log(finalPokeType);
-    enemyDisplayer(finalPoke, finalPokeType);
-
-    return finalPokeType
-}
+//     enemyDisplayer(finalPoke, finalPokeType);
+//     // return finalPokeType, finalPoke
+// }
 
 
 // Function to display enemy pokemon
-const enemyDisplayer = function(finalPoke, finalPokeType) {
+pokemon.enemyDisplayer = function(finalPoke, finalPokeType) {
     const enemyName = (finalPoke.pokemon.name);
     const enemyPic = document.querySelectorAll('.enemyPic');
 
@@ -308,7 +324,7 @@ pokemon.battleResults = function () {
     const brPlayerType = document.querySelector(".playerType");
     const chosenPlayerType = brPlayerType.innerText;
 
-    console.log (chosenPlayerType);
+
 
     const brEnemyType = document.querySelector(".enemyType");
     const randomizedEnemyType = brEnemyType.innerText;
@@ -318,7 +334,6 @@ pokemon.battleResults = function () {
     const fO = document.querySelector(".finalOutcome");
     const fO2 = document.querySelector(".box5");
 
-    console.log(fO2);
 
     if (chosenPlayerType === "fire" && randomizedEnemyType === "fire") {
         fO.innerText = "Draw";
